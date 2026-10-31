@@ -1,31 +1,125 @@
 
-html, body {
-  background-color: lightblue;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+/* General styles */
+* {
+  box-sizing: border-box;
 }
 
 body {
-  nav {
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #263238;
+  line-height: 1.6;
+}
 
-    li {
-      display: inline;
-      margin-right: 15px;
-    }
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
+/* Header */
+.site-header {
+  background-color: #172b4d;
+  color: white;
+  padding: 20px 0;
+}
 
-      &:hover {
-        color: #0066cc;
-      }
-    }
+.site-header h1 {
+  margin: 0 0 15px;
+  font-size: 2rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffd166;
+  text-decoration: underline;
+}
+
+/* Main content */
+main {
+  min-height: 70vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.page-content h2 {
+  color: #172b4d;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.page-content p {
+  font-size: 1.05rem;
+}
+
+/* Categories */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.category-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #dce2e8;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.category-card h3 {
+  color: #172b4d;
+  margin-top: 0;
+}
+
+.category-card p {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #172b4d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Mobile responsive design */
+@media screen and (max-width: 600px) {
+  .site-header h1 {
+    font-size: 1.6rem;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-content h2 {
+    font-size: 1.6rem;
   }
 }
