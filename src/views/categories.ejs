@@ -1,32 +1,23 @@
-
 <%- include("header") %>
 
 <section class="page-content">
-  <h2>Service Project Categories</h2>
+    <h2>Project Categories</h2>
 
-  <p>Explore the different categories of service projects.</p>
+    <p>Explore the different categories of our service projects.</p>
 
-  <div class="category-grid">
-    <article class="category-card">
-      <h3>Environmental</h3>
-      <p>Projects focused on protecting the environment.</p>
-    </article>
+    <div class="organization-grid">
 
-    <article class="category-card">
-      <h3>Educational</h3>
-      <p>Projects that support learning and education.</p>
-    </article>
+        <% categories.forEach(category => { %>
 
-    <article class="category-card">
-      <h3>Community Service</h3>
-      <p>Projects that help and strengthen communities.</p>
-    </article>
+            <article class="organization-card">
+                <div class="organization-info">
+                    <h3><%= category.name %></h3>
+                </div>
+            </article>
 
-    <article class="category-card">
-      <h3>Health and Wellness</h3>
-      <p>Projects that promote health and well-being.</p>
-    </article>
-  </div>
+        <% }) %>
+
+    </div>
 </section>
 
 <%- include("footer") %>
