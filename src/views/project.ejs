@@ -1,0 +1,41 @@
+<%- include("header") %>
+
+<section class="page-content">
+
+    <article class="organization-card">
+
+        <div class="organization-info">
+
+            <h2><%= project.title %></h2>
+
+            <p>
+                <strong>Description:</strong>
+                <%= project.description %>
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                <%= new Date(project.date).toLocaleDateString('en-US') %>
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                <%= project.location %>
+            </p>
+
+            <p>
+                <strong>Organization:</strong>
+                <a href="/organization/<%= project.organization_id %>">
+                    <%= project.organization_name %>
+                </a>
+            </p>
+
+        </div>
+
+    </article>
+
+    <a href="/projects">Back to Projects</a>
+
+</section>
+
+<%- include("footer") %>

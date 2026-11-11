@@ -1,44 +1,40 @@
 <%- include("header") %>
 
 <section class="page-content">
-  <h2>Our Service Projects</h2>
 
-  <p>Explore service projects from our partner organizations.</p>
+    <h2>Upcoming Service Projects</h2>
 
-  <div class="organization-grid">
+    <p>Explore upcoming service projects from our partner organizations.</p>
 
-    <% projects.forEach(project => { %>
+    <div class="organization-grid">
 
-      <article class="organization-card">
+        <% projects.forEach(project => { %>
 
-        <div class="organization-info">
+            <article class="organization-card">
 
-          <h3><%= project.title %></h3>
+                <div class="organization-info">
 
-          <p><%= project.description %></p>
+                    <h3>
+                        <a href="/project/<%= project.project_id %>">
+                            <%= project.title %>
+                        </a>
+                    </h3>
 
-          <p>
-            <strong>Organization:</strong>
-            <%= project.organization_name %>
-          </p>
+                    <p>
+                        <strong>Organization:</strong>
+                        <a href="/organization/<%= project.organization_id %>">
+                            <%= project.organization_name %>
+                        </a>
+                    </p>
 
-          <p>
-            <strong>Location:</strong>
-            <%= project.location %>
-          </p>
+                </div>
 
-          <p>
-            <strong>Date:</strong>
-            <%= new Date(project.date).toLocaleDateString('en-US') %>
-          </p>
+            </article>
 
-        </div>
+        <% }) %>
 
-      </article>
+    </div>
 
-    <% }) %>
-
-  </div>
 </section>
 
 <%- include("footer") %>

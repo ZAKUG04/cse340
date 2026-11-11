@@ -1,0 +1,25 @@
+<%- include("header") %>
+
+<section class="page-content">
+    <article class="organization-card">
+        <div class="organization-info">
+
+            <h2><%= organization.name %></h2>
+
+            <p>
+                <strong>Description:</strong>
+                <%= organization.description %>
+            </p>
+
+            <p>
+                <strong>Contact Email:</strong>
+                <%= organization.contact_email %>
+            </p>
+
+        </div>
+    </article>
+
+    <a href="/organizations">Back to Organizations</a>
+</section>
+
+<%- include("footer") %>
