@@ -1,180 +1,335 @@
+/* =========================================
+   GENERAL STYLES
+========================================= */
 
-/* General styles */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f6f8;
-  color: #263238;
-  line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #263238;
+    line-height: 1.6;
 }
 
 .container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Header */
+img {
+    max-width: 100%;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
 .site-header {
-  background-color: #172b4d;
-  color: white;
-  padding: 20px 0;
+    background-color: #172b4d;
+    color: white;
+    padding: 20px 0;
 }
 
 .site-header h1 {
-  margin: 0 0 15px;
-  font-size: 2rem;
+    margin: 0 0 15px;
+    font-size: 2rem;
 }
 
 nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav a:hover {
-  color: #ffd166;
-  text-decoration: underline;
+    color: #ffd166;
+    text-decoration: underline;
 }
+
 nav a:focus-visible {
-  outline: 3px solid #ffd166;
-  outline-offset: 4px;
-  border-radius: 2px;
+    outline: 3px solid #ffd166;
+    outline-offset: 4px;
+    border-radius: 2px;
 }
-/* Main content */
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
 main {
-  min-height: 70vh;
-  padding-top: 40px;
-  padding-bottom: 40px;
+    min-height: 70vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .page-content h2 {
-  color: #172b4d;
-  font-size: 2rem;
-  margin-bottom: 15px;
+    color: #172b4d;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
 .page-content p {
-  font-size: 1.05rem;
+    font-size: 1.05rem;
 }
 
-/* Categories */
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    color: #2456a6;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #172b4d;
+}
+
+a:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   CATEGORIES
+========================================= */
+
 .category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
 
 .category-card {
-  background-color: white;
-  padding: 25px;
-  border-radius: 10px;
-  border: 1px solid #dce2e8;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #dce2e8;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .category-card h3 {
-  color: #172b4d;
-  margin-top: 0;
+    color: #172b4d;
+    margin-top: 0;
 }
 
 .category-card p {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
-/* Footer */
-.site-footer {
-  background-color: #172b4d;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+/* =========================================
+   ORGANIZATIONS
+========================================= */
 
-.site-footer p {
-  margin: 0;
-}
-
-/* Mobile responsive design */
-@media screen and (max-width: 600px) {
-  .site-header h1 {
-    font-size: 1.6rem;
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-content h2 {
-    font-size: 1.6rem;
-  }
-}
-
-/* Organizations */
 .organization-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
 
 .organization-card {
-  background-color: white;
-  border: 1px solid #dce2e8;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    min-width: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #dce2e8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
-.organization-card img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+.organization-grid .organization-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
-.organization-card img {
-  aspect-ratio: 16 / 9;
-}
+
 .organization-info {
-  padding: 20px;
+    padding: 20px;
 }
 
 .organization-info h3 {
-  color: #172b4d;
-  margin-top: 0;
+    color: #172b4d;
+    margin-top: 0;
 }
 
 .organization-info p {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
-/* Responsive organizations */
-@media screen and (max-width: 800px) {
-  .organization-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Organization detail image */
+
+.organization-info .organization-logo {
+    display: block;
+    width: 100%;
+    max-height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0 20px;
 }
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.project-card,
+.project-grid > article,
+.project-grid > div {
+    min-width: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #dce2e8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    overflow-wrap: break-word;
+}
+
+.project-card h3,
+.project-grid h3 {
+    margin-top: 0;
+    color: #172b4d;
+}
+
+.project-card p,
+.project-grid p {
+    margin-bottom: 10px;
+}
+
+.project-grid a {
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   PROJECT CATEGORIES
+========================================= */
+
+.project-categories {
+    margin-top: 30px;
+}
+
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.category-tag {
+    display: inline-block;
+    background-color: #e8eef7;
+    color: #172b4d;
+    padding: 7px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.category-tag:hover {
+    background-color: #172b4d;
+    color: white;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background-color: #172b4d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* =========================================
+   TABLET RESPONSIVE DESIGN
+========================================= */
+
+@media screen and (max-width: 900px) {
+
+    .organization-grid,
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+========================================= */
 
 @media screen and (max-width: 600px) {
-  .organization-grid {
-    grid-template-columns: 1fr;
-  }
+
+    .container {
+        width: 92%;
+    }
+
+    .site-header {
+        padding: 15px 0;
+    }
+
+    .site-header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    main {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .page-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .category-grid,
+    .organization-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .organization-grid .organization-card img {
+        height: 200px;
+    }
+
+    .organization-info .organization-logo {
+        max-height: 160px;
+    }
+
+    .category-card {
+        padding: 20px;
+    }
+
 }

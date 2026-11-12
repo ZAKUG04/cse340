@@ -1,28 +1,24 @@
 import {
-    getUpcomingProjects,
+    getAllProjects,
     getProjectDetails
 } from '../models/projects.js';
 import {
     getCategoriesByProjectId
 } from '../models/categories.js';
 
-const NUMBER_OF_UPCOMING_PROJECTS = 5;
-
 // Display upcoming service projects
+// Display all service projects
 const showProjectsPage = async (req, res) => {
     try {
-        const projects = await getUpcomingProjects(
-            NUMBER_OF_UPCOMING_PROJECTS
-        );
-
-        const title = 'Upcoming Service Projects';
+        const projects = await getAllProjects();
 
         res.render('projects', {
-            title,
+            title: 'All Service Projects',
             projects
         });
+
     } catch (error) {
-        console.error('Error getting upcoming projects:', error);
+        console.error('Error getting projects:', error);
         res.status(500).send('Something went wrong.');
     }
 };
