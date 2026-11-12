@@ -6,6 +6,14 @@
 
             <h2><%= organization.name %></h2>
 
+            <% if (organization.logo_filename) { %>
+                <img
+                    src="/images/<%= organization.logo_filename %>"
+                    alt="<%= organization.name %> logo"
+                    class="organization-logo"
+                >
+            <% } %>
+
             <p>
                 <strong>Description:</strong>
                 <%= organization.description %>
@@ -18,6 +26,28 @@
 
         </div>
     </article>
+
+    <section class="organization-projects">
+        <h2>Projects by <%= organization.name %></h2>
+
+        <% if (projects && projects.length > 0) { %>
+            <div class="project-grid">
+                <% projects.forEach(project => { %>
+                    <article class="organization-card">
+                        <h3>
+                            <a href="/project/<%= project.project_id %>">
+                                <%= project.title %>
+                            </a>
+                        </h3>
+                        <p><strong>Date:</strong> <%= new Date(project.date).toLocaleDateString('en-US') %></p>
+                        <p><strong>Location:</strong> <%= project.location %></p>
+                    </article>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <p>No projects available for this organization.</p>
+        <% } %>
+    </section>
 
     <a href="/organizations">Back to Organizations</a>
 </section>

@@ -63,9 +63,24 @@ const getProjectDetails = async (id) => {
     const result = await db.query(query, [id]);
     return result.rows[0];
 };
+const getProjectsByOrganizationId = async (id) => {
+    const query = `
+        SELECT
+            project_id,
+            title,
+            date,
+            location
+        FROM project
+        WHERE organization_id = $1
+        ORDER BY date ASC;
+    `;
 
+    const result = await db.query(query, [id]);
+    return result.rows;
+};
 export {
     getAllProjects,
     getUpcomingProjects,
-    getProjectDetails
+    getProjectDetails,
+    getProjectsByOrganizationId
 };
